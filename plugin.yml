@@ -1,0 +1,11 @@
+name: TimeCounterRemake
+main: xyz.feiyueha.plugin.timecounterremake.TimeCounter
+version: 1.0.0
+author: Feiyueha
+commands:
+  tc:
+    description: 查看在线统计
+    usage: §c/tc list
+  list:
+    description: 查看在线统计
+    usage: §c/tc list
