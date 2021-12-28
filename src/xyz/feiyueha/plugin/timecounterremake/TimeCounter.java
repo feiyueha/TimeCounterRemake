@@ -1,6 +1,5 @@
 package xyz.feiyueha.plugin.timecounterremake;
 
-import com.google.common.util.concurrent.Service;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -61,15 +60,13 @@ public class TimeCounter extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
-        task.runTaskTimer(this,autoSaveTime*60*1000,autoSaveTime*60*1000);
+        task.runTaskTimer(this,autoSaveTime*60*20,autoSaveTime*60*20);
     }
 
     @Override
     public void onDisable() {
-        Collection<? extends Player> playerList = getServer().getOnlinePlayers();
-        task.run();
-        getLogger().info("已自动保存玩家在线时长："+playerList.size());
         task.cancel();
+        task.run();
     }
 
     @EventHandler
